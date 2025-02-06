@@ -39,15 +39,15 @@ function drawHeroAnimImageOpened() {
    * LOGO VARIABLES
    * -------------------------- */
 
-  var logoDimensions = {x: 800, y: 800};
-  var global_center = {x: global_width / 2, y: global_height / 2};
+  var logoDimensions = { x: 800, y: 800 };
+  var global_center = { x: global_width / 2, y: global_height / 2 };
   var logoLocation = {
     x: global_center.x - logoDimensions.x / 2,
     y: global_center.y - logoDimensions.y / 2,
   };
 
   var particleArr = [];
-  var particleAttributes = {spacing: 15, radius: 7};
+  var particleAttributes = { spacing: 15, radius: 7 };
   var colorPalette = [
     "rgba(255, 255, 255, 1)",
     "rgba(240, 240, 240, 1)",
@@ -65,9 +65,9 @@ function drawHeroAnimImageOpened() {
     this.x = randomNumber(-200, global_width + 200);
     this.y = randomNumber(-200, global_height + 200);
     this.radius = particleAttributes.radius * randomNumber(0.7, 1);
-    this.color = colorPalette[ Math.floor(randomNumber(0, colorPalette.length)) ];
+    this.color = colorPalette[Math.floor(randomNumber(0, colorPalette.length))];
     this.shapeOffsets = Array.from(
-      {length: 8},
+      { length: 8 },
       () => this.radius * (0.8 + Math.random() * 0.4)
     );
   }
@@ -84,14 +84,14 @@ function drawHeroAnimImageOpened() {
     let textWidth, textHeight;
 
     if (window.innerWidth > 1500) {
-      textWidth = 1600;
-      textHeight = 1600 / imgLeftAspect;
+      textWidth = 2600;
+      textHeight = 2600 / imgLeftAspect;
     } else if (window.innerWidth > 576) {
       if (canvasAspect > imgLeftAspect) {
         // textHeight = global_height + imgMaxWidth;
         // textWidth = (global_height + imgMaxWidth) * imgLeftAspect;
-        textWidth = 1500;
-        textHeight = 1500 / imgLeftAspect;
+        textWidth = 2500;
+        textHeight = 2500 / imgLeftAspect;
       } else {
         textWidth = global_width - imgMaxWidth;
         textHeight = (global_width - imgMaxWidth) / imgLeftAspect;
@@ -124,7 +124,7 @@ function drawHeroAnimImageOpened() {
       );
       contextReference.drawImage(burger, global_width - 190, 30, 150, 155);
       contextReference.drawImage(inst, 250, global_height - 200, 150, 150);
-      particleAttributes = {spacing: 15, radius: 7};
+      particleAttributes = { spacing: 15, radius: 7 };
       contextReference.drawImage(
         image,
         logoLocation.x,
@@ -149,7 +149,7 @@ function drawHeroAnimImageOpened() {
       );
       contextReference.drawImage(burger, global_width - 200, 30, 100, 100);
       contextReference.drawImage(inst, 50, global_height - 200, 150, 150);
-      particleAttributes = {spacing: 12, radius: 5};
+      particleAttributes = { spacing: 12, radius: 5 };
       contextReference.drawImage(
         image,
         logoLocation.x,
@@ -174,8 +174,8 @@ function drawHeroAnimImageOpened() {
       );
       contextReference.drawImage(burger, global_width - 150, 150, 100, 100);
       contextReference.drawImage(inst, 50, global_height / 2 + 500, 150, 150);
-      particleAttributes = {spacing: 10, radius: 4};
-      logoDimensions = {x: 500, y: 500};
+      particleAttributes = { spacing: 10, radius: 4 };
+      logoDimensions = { x: 500, y: 500 };
       logoLocation = {
         x: global_center.x - logoDimensions.x / 2,
         y: global_center.y - logoDimensions.y / 2,
@@ -204,8 +204,8 @@ function drawHeroAnimImageOpened() {
       );
       contextReference.drawImage(burger, global_width - 150, 150, 100, 100);
       contextReference.drawImage(inst, 50, global_height / 2 + 500, 150, 150);
-      particleAttributes = {spacing: 10, radius: 4};
-      logoDimensions = {x: 500, y: 500};
+      particleAttributes = { spacing: 10, radius: 4 };
+      logoDimensions = { x: 500, y: 500 };
       logoLocation = {
         x: global_center.x - logoDimensions.x / 2,
         y: global_center.y - logoDimensions.y / 2,
@@ -227,10 +227,10 @@ function drawHeroAnimImageOpened() {
       global_width,
       global_height
     ).data;
-    for (let y = 0;y < global_height;y += particleAttributes.spacing) {
-      for (let x = 0;x < global_width;x += particleAttributes.spacing) {
+    for (let y = 0; y < global_height; y += particleAttributes.spacing) {
+      for (let x = 0; x < global_width; x += particleAttributes.spacing) {
         const index = (y * global_width + x) * 4;
-        if (pixels[ index + 3 ] === 0) {
+        if (pixels[index + 3] === 0) {
           const particle = new Particle(x, y);
           particleArr.push(particle);
           TweenLite.to(particle, randomNumber(1, 2), {
@@ -261,7 +261,7 @@ function drawHeroAnimImageOpened() {
 
     global_width = window.innerWidth * 2;
     global_height = window.innerHeight * 2;
-    global_center = {x: global_width / 2, y: global_height / 2};
+    global_center = { x: global_width / 2, y: global_height / 2 };
     logoLocation = {
       x: global_center.x - logoDimensions.x / 2,
       y: global_center.y - logoDimensions.y / 2,
@@ -288,9 +288,9 @@ function drawHeroAnimImageOpened() {
     const points = shapeOffsets.length;
     const angleStep = (Math.PI * 2) / points;
 
-    for (let i = 0;i <= points;i++) {
+    for (let i = 0; i <= points; i++) {
       const angle = i * angleStep;
-      const offsetRadius = shapeOffsets[ i % points ];
+      const offsetRadius = shapeOffsets[i % points];
       const xPoint = x + Math.cos(angle) * offsetRadius;
       const yPoint = y + Math.sin(angle) * offsetRadius;
 
@@ -306,8 +306,8 @@ function drawHeroAnimImageOpened() {
 
   function render() {
     contextInteractive.clearRect(0, 0, global_width, global_height);
-    for (var i = 0;i < particleArr.length;i++) {
-      var p = particleArr[ i ];
+    for (var i = 0; i < particleArr.length; i++) {
+      var p = particleArr[i];
 
       // Draw each particle as a consistent organic shape using precomputed offsets
       drawOrganicShape(contextInteractive, p.x, p.y, p.shapeOffsets);
@@ -329,23 +329,23 @@ function drawHeroAnimImageOpened() {
    * INTERACTIONS
    * -------------------------- */
 
-  document.body.addEventListener("mousedown", function() {
-    for (var i = 0;i < particleArr.length;i++) {
-      var p = particleArr[ i ];
+  document.body.addEventListener("mousedown", function () {
+    for (var i = 0; i < particleArr.length; i++) {
+      var p = particleArr[i];
       var angle = Math.atan2(p.y - global_center.y, p.x - global_center.x);
       var distance = randomNumber(150, 300);
 
       var xTarget = p.originX + Math.cos(angle) * distance;
       var yTarget = p.originY + Math.sin(angle) * distance;
 
-      TweenLite.to(p, randomNumber(1, 1.5), {x: xTarget, y: yTarget});
+      TweenLite.to(p, randomNumber(1, 1.5), { x: xTarget, y: yTarget });
     }
   });
 
-  document.body.addEventListener("mouseup", function() {
-    for (var i = 0;i < particleArr.length;i++) {
-      var p = particleArr[ i ];
-      TweenLite.to(p, randomNumber(1, 2), {x: p.originX, y: p.originY});
+  document.body.addEventListener("mouseup", function () {
+    for (var i = 0; i < particleArr.length; i++) {
+      var p = particleArr[i];
+      TweenLite.to(p, randomNumber(1, 2), { x: p.originX, y: p.originY });
     }
   });
 
@@ -390,15 +390,15 @@ function drawHeroAnimImage(isFirst = true) {
    * LOGO VARIABLES
    * -------------------------- */
 
-  var logoDimensions = {x: 800, y: 800};
-  var global_center = {x: global_width / 2, y: global_height / 2};
+  var logoDimensions = { x: 800, y: 800 };
+  var global_center = { x: global_width / 2, y: global_height / 2 };
   var logoLocation = {
     x: global_center.x - logoDimensions.x / 2,
     y: global_center.y - logoDimensions.y / 2,
   };
 
   var particleArr = [];
-  var particleAttributes = {spacing: 15, radius: 7};
+  var particleAttributes = { spacing: 15, radius: 7 };
   var colorPalette = [
     "rgba(255, 255, 255, 1)",
     "rgba(240, 240, 240, 1)",
@@ -416,9 +416,9 @@ function drawHeroAnimImage(isFirst = true) {
     this.x = randomNumber(-200, global_width + 200);
     this.y = randomNumber(-200, global_height + 200);
     this.radius = particleAttributes.radius * randomNumber(0.7, 1);
-    this.color = colorPalette[ Math.floor(randomNumber(0, colorPalette.length)) ];
+    this.color = colorPalette[Math.floor(randomNumber(0, colorPalette.length))];
     this.shapeOffsets = Array.from(
-      {length: 8},
+      { length: 8 },
       () => this.radius * (0.8 + Math.random() * 0.4)
     );
   }
@@ -475,7 +475,7 @@ function drawHeroAnimImage(isFirst = true) {
       );
       contextReference.drawImage(burger, global_width - 190, 30, 150, 125);
       contextReference.drawImage(inst, 250, global_height - 200, 150, 150);
-      particleAttributes = {spacing: 15, radius: 7};
+      particleAttributes = { spacing: 15, radius: 7 };
       contextReference.drawImage(
         image,
         logoLocation.x,
@@ -500,7 +500,7 @@ function drawHeroAnimImage(isFirst = true) {
       );
       contextReference.drawImage(burger, global_width - 200, 30, 100, 90);
       contextReference.drawImage(inst, 50, global_height - 200, 150, 150);
-      particleAttributes = {spacing: 12, radius: 5};
+      particleAttributes = { spacing: 12, radius: 5 };
       contextReference.drawImage(
         image,
         logoLocation.x,
@@ -525,8 +525,8 @@ function drawHeroAnimImage(isFirst = true) {
       );
       contextReference.drawImage(burger, global_width - 150, 150, 100, 80);
       contextReference.drawImage(inst, 50, global_height / 2 + 500, 150, 150);
-      particleAttributes = {spacing: 10, radius: 4};
-      logoDimensions = {x: 500, y: 500};
+      particleAttributes = { spacing: 10, radius: 4 };
+      logoDimensions = { x: 500, y: 500 };
       logoLocation = {
         x: global_center.x - logoDimensions.x / 2,
         y: global_center.y - logoDimensions.y / 2,
@@ -555,8 +555,8 @@ function drawHeroAnimImage(isFirst = true) {
       );
       contextReference.drawImage(burger, global_width - 150, 150, 100, 80);
       contextReference.drawImage(inst, 50, global_height / 2 + 500, 150, 150);
-      particleAttributes = {spacing: 10, radius: 4};
-      logoDimensions = {x: 500, y: 500};
+      particleAttributes = { spacing: 10, radius: 4 };
+      logoDimensions = { x: 500, y: 500 };
       logoLocation = {
         x: global_center.x - logoDimensions.x / 2,
         y: global_center.y - logoDimensions.y / 2,
@@ -578,10 +578,10 @@ function drawHeroAnimImage(isFirst = true) {
       global_width,
       global_height
     ).data;
-    for (let y = 0;y < global_height;y += particleAttributes.spacing) {
-      for (let x = 0;x < global_width;x += particleAttributes.spacing) {
+    for (let y = 0; y < global_height; y += particleAttributes.spacing) {
+      for (let x = 0; x < global_width; x += particleAttributes.spacing) {
         const index = (y * global_width + x) * 4;
-        if (pixels[ index + 3 ] === 0) {
+        if (pixels[index + 3] === 0) {
           const particle = new Particle(x, y);
           particleArr.push(particle);
           TweenLite.to(particle, randomNumber(1, 2), {
@@ -618,7 +618,7 @@ function drawHeroAnimImage(isFirst = true) {
 
     global_width = window.innerWidth * 2;
     global_height = window.innerHeight * 2;
-    global_center = {x: global_width / 2, y: global_height / 2};
+    global_center = { x: global_width / 2, y: global_height / 2 };
     logoLocation = {
       x: global_center.x - logoDimensions.x / 2,
       y: global_center.y - logoDimensions.y / 2,
@@ -645,9 +645,9 @@ function drawHeroAnimImage(isFirst = true) {
     const points = shapeOffsets.length;
     const angleStep = (Math.PI * 2) / points;
 
-    for (let i = 0;i <= points;i++) {
+    for (let i = 0; i <= points; i++) {
       const angle = i * angleStep;
-      const offsetRadius = shapeOffsets[ i % points ];
+      const offsetRadius = shapeOffsets[i % points];
       const xPoint = x + Math.cos(angle) * offsetRadius;
       const yPoint = y + Math.sin(angle) * offsetRadius;
 
@@ -663,8 +663,8 @@ function drawHeroAnimImage(isFirst = true) {
 
   function render() {
     contextInteractive.clearRect(0, 0, global_width, global_height);
-    for (var i = 0;i < particleArr.length;i++) {
-      var p = particleArr[ i ];
+    for (var i = 0; i < particleArr.length; i++) {
+      var p = particleArr[i];
 
       // Draw each particle as a consistent organic shape using precomputed offsets
       drawOrganicShape(contextInteractive, p.x, p.y, p.shapeOffsets);
@@ -686,23 +686,23 @@ function drawHeroAnimImage(isFirst = true) {
    * INTERACTIONS
    * -------------------------- */
 
-  document.body.addEventListener("mousedown", function() {
-    for (var i = 0;i < particleArr.length;i++) {
-      var p = particleArr[ i ];
+  document.body.addEventListener("mousedown", function () {
+    for (var i = 0; i < particleArr.length; i++) {
+      var p = particleArr[i];
       var angle = Math.atan2(p.y - global_center.y, p.x - global_center.x);
       var distance = randomNumber(150, 300);
 
       var xTarget = p.originX + Math.cos(angle) * distance;
       var yTarget = p.originY + Math.sin(angle) * distance;
 
-      TweenLite.to(p, randomNumber(1, 1.5), {x: xTarget, y: yTarget});
+      TweenLite.to(p, randomNumber(1, 1.5), { x: xTarget, y: yTarget });
     }
   });
 
-  document.body.addEventListener("mouseup", function() {
-    for (var i = 0;i < particleArr.length;i++) {
-      var p = particleArr[ i ];
-      TweenLite.to(p, randomNumber(1, 2), {x: p.originX, y: p.originY});
+  document.body.addEventListener("mouseup", function () {
+    for (var i = 0; i < particleArr.length; i++) {
+      var p = particleArr[i];
+      TweenLite.to(p, randomNumber(1, 2), { x: p.originX, y: p.originY });
     }
   });
 
@@ -745,15 +745,15 @@ function drawWebsiteAnimImage(isFirst) {
    * LOGO VARIABLES
    * -------------------------- */
 
-  var logoDimensions = {x: 2280, y: 1290};
-  var global_center = {x: global_width / 2, y: global_height / 2};
+  var logoDimensions = { x: 2280, y: 1290 };
+  var global_center = { x: global_width / 2, y: global_height / 2 };
   var logoLocation = {
     x: global_center.x - logoDimensions.x / 2,
     y: global_center.y - logoDimensions.y / 2,
   };
 
   var particleArr = [];
-  var particleAttributes = {spacing: 15, radius: 7};
+  var particleAttributes = { spacing: 15, radius: 7 };
   var colorPalette = [
     "rgba(255, 255, 255, 1)",
     "rgba(240, 240, 240, 1)",
@@ -771,9 +771,9 @@ function drawWebsiteAnimImage(isFirst) {
     this.x = randomNumber(-200, global_width + 200);
     this.y = randomNumber(-200, global_height + 200);
     this.radius = particleAttributes.radius * randomNumber(0.7, 1);
-    this.color = colorPalette[ Math.floor(randomNumber(0, colorPalette.length)) ];
+    this.color = colorPalette[Math.floor(randomNumber(0, colorPalette.length))];
     this.shapeOffsets = Array.from(
-      {length: 8},
+      { length: 8 },
       () => this.radius * (0.8 + Math.random() * 0.4)
     );
   }
@@ -845,8 +845,8 @@ function drawWebsiteAnimImage(isFirst) {
         textHeight,
         rightX,
         rightY,
-        burgerPos: {x: global_width - 190, y: 30, w: 150, h: 125},
-        instPos: {x: 250, y: global_height - 200, w: 150, h: 150},
+        burgerPos: { x: global_width - 190, y: 30, w: 150, h: 125 },
+        instPos: { x: 250, y: global_height - 200, w: 150, h: 150 },
         imagePos: {
           x: centerX - 900, // Center the image
           y: centerY - 450, // Position image above slider
@@ -862,8 +862,8 @@ function drawWebsiteAnimImage(isFirst) {
         textHeight,
         rightX,
         rightY,
-        burgerPos: {x: global_width - 190, y: 30, w: 150, h: 125},
-        instPos: {x: 250, y: global_height - 200, w: 150, h: 150},
+        burgerPos: { x: global_width - 190, y: 30, w: 150, h: 125 },
+        instPos: { x: 250, y: global_height - 200, w: 150, h: 150 },
         imagePos: {
           x: centerX - 750,
           y: centerY - 425,
@@ -879,8 +879,8 @@ function drawWebsiteAnimImage(isFirst) {
         textHeight,
         rightX,
         rightY,
-        burgerPos: {x: global_width - 200, y: 30, w: 100, h: 90},
-        instPos: {x: 50, y: global_height - 200, w: 150, h: 150},
+        burgerPos: { x: global_width - 200, y: 30, w: 100, h: 90 },
+        instPos: { x: 50, y: global_height - 200, w: 150, h: 150 },
         imagePos: {
           x: centerX - 800,
           y: centerY - 450,
@@ -896,8 +896,8 @@ function drawWebsiteAnimImage(isFirst) {
         textHeight,
         rightX,
         rightY: rightY - 120,
-        burgerPos: {x: global_width - 150, y: 150, w: 100, h: 80},
-        instPos: {x: 50, y: global_height / 2 + 500, w: 150, h: 150},
+        burgerPos: { x: global_width - 150, y: 150, w: 100, h: 80 },
+        instPos: { x: 50, y: global_height / 2 + 500, w: 150, h: 150 },
         imagePos: {
           x: centerX - 250,
           y: centerY - 250,
@@ -971,7 +971,7 @@ function drawWebsiteAnimImage(isFirst) {
         imagePos.h
       );
     }
-    particleAttributes = {spacing: particleSpacing, radius: particleRadius};
+    particleAttributes = { spacing: particleSpacing, radius: particleRadius };
   }
 
   function initParticles() {
@@ -983,10 +983,10 @@ function drawWebsiteAnimImage(isFirst) {
       global_height
     ).data;
 
-    for (let y = 0;y < global_height;y += particleAttributes.spacing) {
-      for (let x = 0;x < global_width;x += particleAttributes.spacing) {
+    for (let y = 0; y < global_height; y += particleAttributes.spacing) {
+      for (let x = 0; x < global_width; x += particleAttributes.spacing) {
         const index = (y * global_width + x) * 4;
-        if (pixels[ index + 3 ] === 0) {
+        if (pixels[index + 3] === 0) {
           const particle = new Particle(x, y);
           particleArr.push(particle);
           TweenLite.to(particle, randomNumber(1, 2), {
@@ -1022,7 +1022,7 @@ function drawWebsiteAnimImage(isFirst) {
 
     global_width = window.innerWidth * 2;
     global_height = window.innerHeight * 2;
-    global_center = {x: global_width / 2, y: global_height / 2};
+    global_center = { x: global_width / 2, y: global_height / 2 };
     logoLocation = {
       x: global_center.x - logoDimensions.x / 2,
       y: global_center.y - logoDimensions.y / 2,
@@ -1049,9 +1049,9 @@ function drawWebsiteAnimImage(isFirst) {
     const points = shapeOffsets.length;
     const angleStep = (Math.PI * 2) / points;
 
-    for (let i = 0;i <= points;i++) {
+    for (let i = 0; i <= points; i++) {
       const angle = i * angleStep;
-      const offsetRadius = shapeOffsets[ i % points ];
+      const offsetRadius = shapeOffsets[i % points];
       const xPoint = x + Math.cos(angle) * offsetRadius;
       const yPoint = y + Math.sin(angle) * offsetRadius;
 
@@ -1069,8 +1069,8 @@ function drawWebsiteAnimImage(isFirst) {
     document.querySelector(".portfolio-slider").classList.add("initial-load");
 
     contextInteractive.clearRect(0, 0, global_width, global_height);
-    for (var i = 0;i < particleArr.length;i++) {
-      var p = particleArr[ i ];
+    for (var i = 0; i < particleArr.length; i++) {
+      var p = particleArr[i];
 
       // Draw each particle as a consistent organic shape using precomputed offsets
       drawOrganicShape(contextInteractive, p.x, p.y, p.shapeOffsets);
@@ -1092,22 +1092,22 @@ function drawWebsiteAnimImage(isFirst) {
    * INTERACTIONS
    * -------------------------- */
   function scatterParticles() {
-    for (var i = 0;i < particleArr.length;i++) {
-      var p = particleArr[ i ];
+    for (var i = 0; i < particleArr.length; i++) {
+      var p = particleArr[i];
       var angle = Math.atan2(p.y - global_center.y, p.x - global_center.x);
       var distance = randomNumber(150, 300);
 
       var xTarget = p.originX + Math.cos(angle) * distance;
       var yTarget = p.originY + Math.sin(angle) * distance;
 
-      TweenLite.to(p, randomNumber(1, 1.5), {x: xTarget, y: yTarget});
+      TweenLite.to(p, randomNumber(1, 1.5), { x: xTarget, y: yTarget });
     }
   }
 
   function returnParticles() {
-    for (var i = 0;i < particleArr.length;i++) {
-      var p = particleArr[ i ];
-      TweenLite.to(p, randomNumber(1, 2), {x: p.originX, y: p.originY});
+    for (var i = 0; i < particleArr.length; i++) {
+      var p = particleArr[i];
+      TweenLite.to(p, randomNumber(1, 2), { x: p.originX, y: p.originY });
     }
   }
   // Initialize Swiper with particle animations
@@ -1130,27 +1130,27 @@ function drawWebsiteAnimImage(isFirst) {
     },
     on: {
       // Trigger scatter effect when slide change begins
-      slideChangeTransitionStart: function() {
+      slideChangeTransitionStart: function () {
         document
           .querySelector(".portfolio-slider")
           .classList.remove("initial-load");
         scatterParticles();
       },
       // Return particles when slide change ends
-      slideChangeTransitionEnd: function() {
+      slideChangeTransitionEnd: function () {
         document
           .querySelector(".portfolio-slider")
           .classList.remove("initial-load");
         returnParticles();
       },
       // Optional: Add effects for touch interactions
-      touchStart: function() {
+      touchStart: function () {
         document
           .querySelector(".portfolio-slider")
           .classList.add("touch-active");
         scatterParticles();
       },
-      touchEnd: function() {
+      touchEnd: function () {
         document
           .querySelector(".portfolio-slider")
           .classList.remove("touch-active");
@@ -1166,27 +1166,27 @@ function drawWebsiteAnimImage(isFirst) {
     }
   }
 
-  document.body.addEventListener("mousedown", function() {
+  document.body.addEventListener("mousedown", function () {
     document.querySelector(".portfolio-slider").classList.add("touch-active");
-    for (var i = 0;i < particleArr.length;i++) {
-      var p = particleArr[ i ];
+    for (var i = 0; i < particleArr.length; i++) {
+      var p = particleArr[i];
       var angle = Math.atan2(p.y - global_center.y, p.x - global_center.x);
       var distance = randomNumber(150, 300);
 
       var xTarget = p.originX + Math.cos(angle) * distance;
       var yTarget = p.originY + Math.sin(angle) * distance;
 
-      TweenLite.to(p, randomNumber(1, 1.5), {x: xTarget, y: yTarget});
+      TweenLite.to(p, randomNumber(1, 1.5), { x: xTarget, y: yTarget });
     }
   });
 
-  document.body.addEventListener("mouseup", function() {
+  document.body.addEventListener("mouseup", function () {
     document
       .querySelector(".portfolio-slider")
       .classList.remove("touch-active");
-    for (var i = 0;i < particleArr.length;i++) {
-      var p = particleArr[ i ];
-      TweenLite.to(p, randomNumber(1, 2), {x: p.originX, y: p.originY});
+    for (var i = 0; i < particleArr.length; i++) {
+      var p = particleArr[i];
+      TweenLite.to(p, randomNumber(1, 2), { x: p.originX, y: p.originY });
     }
   });
 
@@ -1229,15 +1229,15 @@ function drawContactAnimImage(isFirst) {
    * LOGO VARIABLES
    * -------------------------- */
 
-  var logoDimensions = {x: 1800, y: 1290};
-  var global_center = {x: global_width / 2, y: global_height / 2};
+  var logoDimensions = { x: 1800, y: 1290 };
+  var global_center = { x: global_width / 2, y: global_height / 2 };
   var logoLocation = {
     x: global_center.x - logoDimensions.x / 2,
     y: global_center.y - logoDimensions.y / 2,
   };
 
   var particleArr = [];
-  var particleAttributes = {spacing: 15, radius: 7};
+  var particleAttributes = { spacing: 15, radius: 7 };
   var colorPalette = [
     "rgba(255, 255, 255, 1)",
     "rgba(240, 240, 240, 1)",
@@ -1255,9 +1255,9 @@ function drawContactAnimImage(isFirst) {
     this.x = randomNumber(-200, global_width + 200);
     this.y = randomNumber(-200, global_height + 200);
     this.radius = particleAttributes.radius * randomNumber(0.7, 1);
-    this.color = colorPalette[ Math.floor(randomNumber(0, colorPalette.length)) ];
+    this.color = colorPalette[Math.floor(randomNumber(0, colorPalette.length))];
     this.shapeOffsets = Array.from(
-      {length: 8},
+      { length: 8 },
       () => this.radius * (0.8 + Math.random() * 0.4)
     );
   }
@@ -1313,7 +1313,7 @@ function drawContactAnimImage(isFirst) {
       );
       contextReference.drawImage(burger, global_width - 190, 30, 150, 125);
       contextReference.drawImage(inst, 250, global_height - 200, 150, 150);
-      particleAttributes = {spacing: 15, radius: 7};
+      particleAttributes = { spacing: 15, radius: 7 };
     } else if (window.innerWidth > 992) {
       contextReference.drawImage(
         text_left_image,
@@ -1331,7 +1331,7 @@ function drawContactAnimImage(isFirst) {
       );
       contextReference.drawImage(burger, global_width - 190, 30, 150, 125);
       contextReference.drawImage(inst, 250, global_height - 200, 150, 150);
-      particleAttributes = {spacing: 15, radius: 7};
+      particleAttributes = { spacing: 15, radius: 7 };
     } else if (window.innerWidth > 576) {
       contextReference.drawImage(
         text_left_image,
@@ -1349,7 +1349,7 @@ function drawContactAnimImage(isFirst) {
       );
       contextReference.drawImage(burger, global_width - 200, 30, 100, 90);
       contextReference.drawImage(inst, 50, global_height - 200, 150, 150);
-      particleAttributes = {spacing: 12, radius: 5};
+      particleAttributes = { spacing: 12, radius: 5 };
       contextReference.drawImage(
         image,
         logoLocation.x + 310,
@@ -1375,8 +1375,8 @@ function drawContactAnimImage(isFirst) {
       );
       contextReference.drawImage(burger, global_width - 150, 150, 100, 80);
       contextReference.drawImage(inst, 50, global_height / 2 + 500, 150, 150);
-      particleAttributes = {spacing: 10, radius: 4};
-      logoDimensions = {x: 500, y: 500};
+      particleAttributes = { spacing: 10, radius: 4 };
+      logoDimensions = { x: 500, y: 500 };
       logoLocation = {
         x: global_center.x - logoDimensions.x / 2,
         y: global_center.y - logoDimensions.y / 2,
@@ -1405,8 +1405,8 @@ function drawContactAnimImage(isFirst) {
       );
       contextReference.drawImage(burger, global_width - 150, 150, 100, 80);
       contextReference.drawImage(inst, 50, global_height / 2 + 500, 150, 150);
-      particleAttributes = {spacing: 10, radius: 4};
-      logoDimensions = {x: 500, y: 500};
+      particleAttributes = { spacing: 10, radius: 4 };
+      logoDimensions = { x: 500, y: 500 };
       logoLocation = {
         x: global_center.x - logoDimensions.x / 2,
         y: global_center.y - logoDimensions.y / 2,
@@ -1428,10 +1428,10 @@ function drawContactAnimImage(isFirst) {
       global_width,
       global_height
     ).data;
-    for (let y = 0;y < global_height;y += particleAttributes.spacing) {
-      for (let x = 0;x < global_width;x += particleAttributes.spacing) {
+    for (let y = 0; y < global_height; y += particleAttributes.spacing) {
+      for (let x = 0; x < global_width; x += particleAttributes.spacing) {
         const index = (y * global_width + x) * 4;
-        if (pixels[ index + 3 ] === 0) {
+        if (pixels[index + 3] === 0) {
           const particle = new Particle(x, y);
           particleArr.push(particle);
           TweenLite.to(particle, randomNumber(1, 2), {
@@ -1468,7 +1468,7 @@ function drawContactAnimImage(isFirst) {
 
     global_width = window.innerWidth * 2;
     global_height = window.innerHeight * 2;
-    global_center = {x: global_width / 2, y: global_height / 2};
+    global_center = { x: global_width / 2, y: global_height / 2 };
     logoLocation = {
       x: global_center.x - logoDimensions.x / 2,
       y: global_center.y - logoDimensions.y / 2,
@@ -1495,9 +1495,9 @@ function drawContactAnimImage(isFirst) {
     const points = shapeOffsets.length;
     const angleStep = (Math.PI * 2) / points;
 
-    for (let i = 0;i <= points;i++) {
+    for (let i = 0; i <= points; i++) {
       const angle = i * angleStep;
-      const offsetRadius = shapeOffsets[ i % points ];
+      const offsetRadius = shapeOffsets[i % points];
       const xPoint = x + Math.cos(angle) * offsetRadius;
       const yPoint = y + Math.sin(angle) * offsetRadius;
 
@@ -1515,8 +1515,8 @@ function drawContactAnimImage(isFirst) {
     document.querySelector(".contact-page").classList.add("initial-load");
 
     contextInteractive.clearRect(0, 0, global_width, global_height);
-    for (var i = 0;i < particleArr.length;i++) {
-      var p = particleArr[ i ];
+    for (var i = 0; i < particleArr.length; i++) {
+      var p = particleArr[i];
 
       // Draw each particle as a consistent organic shape using precomputed offsets
       drawOrganicShape(contextInteractive, p.x, p.y, p.shapeOffsets);
@@ -1538,25 +1538,25 @@ function drawContactAnimImage(isFirst) {
    * INTERACTIONS
    * -------------------------- */
 
-  document.body.addEventListener("mousedown", function() {
+  document.body.addEventListener("mousedown", function () {
     document.querySelector(".contact-page").classList.add("touch-active");
-    for (var i = 0;i < particleArr.length;i++) {
-      var p = particleArr[ i ];
+    for (var i = 0; i < particleArr.length; i++) {
+      var p = particleArr[i];
       var angle = Math.atan2(p.y - global_center.y, p.x - global_center.x);
       var distance = randomNumber(150, 300);
 
       var xTarget = p.originX + Math.cos(angle) * distance;
       var yTarget = p.originY + Math.sin(angle) * distance;
 
-      TweenLite.to(p, randomNumber(1, 1.5), {x: xTarget, y: yTarget});
+      TweenLite.to(p, randomNumber(1, 1.5), { x: xTarget, y: yTarget });
     }
   });
 
-  document.body.addEventListener("mouseup", function() {
+  document.body.addEventListener("mouseup", function () {
     document.querySelector(".contact-page").classList.remove("touch-active");
-    for (var i = 0;i < particleArr.length;i++) {
-      var p = particleArr[ i ];
-      TweenLite.to(p, randomNumber(1, 2), {x: p.originX, y: p.originY});
+    for (var i = 0; i < particleArr.length; i++) {
+      var p = particleArr[i];
+      TweenLite.to(p, randomNumber(1, 2), { x: p.originX, y: p.originY });
     }
   });
 
@@ -1621,7 +1621,7 @@ function drawFooterAnimImage() {
   };
 
   var particleArr = [];
-  var particleAttributes = {spacing: 15, radius: 7};
+  var particleAttributes = { spacing: 15, radius: 7 };
   var colorPalette = [
     "rgba(255, 255, 255, 1)",
     "rgba(240, 240, 240, 1)",
@@ -1640,7 +1640,7 @@ function drawFooterAnimImage() {
   function Particle(x, y) {
     this.x = this.originX = x;
     this.y = this.originY = y;
-    this.color = colorPalette[ Math.floor(randomNumber(0, colorPalette.length)) ];
+    this.color = colorPalette[Math.floor(randomNumber(0, colorPalette.length))];
   }
 
   /* --------------------------
@@ -1660,18 +1660,18 @@ function drawFooterAnimImage() {
       global_height
     ).data;
     var index;
-    for (var y = 0;y < global_height;y += particleAttributes.spacing) {
-      for (var x = 0;x < global_width;x += particleAttributes.spacing) {
+    for (var y = 0; y < global_height; y += particleAttributes.spacing) {
+      for (var x = 0; x < global_width; x += particleAttributes.spacing) {
         index = (y * global_width + x) * 4;
-        if (pixels[ ++index ] > 0) {
+        if (pixels[++index] > 0) {
           particleArr.push(new Particle(x, y));
         }
       }
     }
 
     // Animate the particles in from around the stage
-    for (var i = 0;i < particleArr.length;i++) {
-      TweenLite.from(particleArr[ i ], randomNumber(1, 2), {
+    for (var i = 0; i < particleArr.length; i++) {
+      TweenLite.from(particleArr[i], randomNumber(1, 2), {
         y: randomNumber(-100, canvasInteractive.height + 100),
         x: randomNumber(-100, canvasInteractive.width + 100),
       });
@@ -1749,8 +1749,8 @@ function drawFooterAnimImage() {
     // Draw the particles
 
     contextInteractive.clearRect(0, 0, global_width, global_height);
-    for (var i = 0;i < particleArr.length;i++) {
-      var p = particleArr[ i ];
+    for (var i = 0; i < particleArr.length; i++) {
+      var p = particleArr[i];
       contextInteractive.beginPath();
       contextInteractive.arc(
         p.x,
@@ -1782,10 +1782,10 @@ function drawFooterAnimImage() {
    * Mouse Down
    */
 
-  document.body.addEventListener("mousedown", function(event) {
-    for (var i = 0;i < particleArr.length;i++) {
+  document.body.addEventListener("mousedown", function (event) {
+    for (var i = 0; i < particleArr.length; i++) {
       // Animate particles off the stage
-      TweenLite.to(particleArr[ i ], randomNumber(0.1, 1), {
+      TweenLite.to(particleArr[i], randomNumber(0.1, 1), {
         y: randomExcluded(
           -200,
           canvasInteractive.height + 200,
@@ -1800,12 +1800,12 @@ function drawFooterAnimImage() {
   /**
    * Mouse Up
    */
-  document.body.addEventListener("mouseup", function(event) {
-    for (var i = 0;i < particleArr.length;i++) {
+  document.body.addEventListener("mouseup", function (event) {
+    for (var i = 0; i < particleArr.length; i++) {
       // Put the particles back at their origin
-      TweenLite.to(particleArr[ i ], randomNumber(1, 3), {
-        y: particleArr[ i ].originY,
-        x: particleArr[ i ].originX,
+      TweenLite.to(particleArr[i], randomNumber(1, 3), {
+        y: particleArr[i].originY,
+        x: particleArr[i].originX,
       });
     }
   });
@@ -1814,10 +1814,10 @@ function drawFooterAnimImage() {
    * Touch Start
    */
 
-  document.body.addEventListener("touchstart", function(event) {
-    for (var i = 0;i < particleArr.length;i++) {
+  document.body.addEventListener("touchstart", function (event) {
+    for (var i = 0; i < particleArr.length; i++) {
       // Animate particles off the stage
-      TweenLite.to(particleArr[ i ], randomNumber(0.1, 1), {
+      TweenLite.to(particleArr[i], randomNumber(0.1, 1), {
         y: randomExcluded(
           -200,
           canvasInteractive.height + 200,
@@ -1832,12 +1832,12 @@ function drawFooterAnimImage() {
   /**
    * Touch End
    */
-  document.body.addEventListener("touchend", function(event) {
-    for (var i = 0;i < particleArr.length;i++) {
+  document.body.addEventListener("touchend", function (event) {
+    for (var i = 0; i < particleArr.length; i++) {
       // Put the particles back at their origin
-      TweenLite.to(particleArr[ i ], randomNumber(1, 3), {
-        y: particleArr[ i ].originY,
-        x: particleArr[ i ].originX,
+      TweenLite.to(particleArr[i], randomNumber(1, 3), {
+        y: particleArr[i].originY,
+        x: particleArr[i].originX,
       });
     }
   });
@@ -1955,7 +1955,7 @@ document.addEventListener("DOMContentLoaded", () => {
    * -------------------------- */
 
   var background = {};
-  background.initialize = function() {
+  background.initialize = function () {
     var $this = this;
 
     //option
@@ -1966,7 +1966,7 @@ document.addEventListener("DOMContentLoaded", () => {
       stroke_color: "black",
     };
     $this.bubbles_number = 30;
-    $this.speed = [ 1500, 8000 ]; //milliseconds
+    $this.speed = [1500, 8000]; //milliseconds
     $this.max_bubbles_height = $this.height;
     $this.shape = false; // 1 : circle | 2 : triangle | 3 : rect | false :random
 
@@ -1975,8 +1975,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     $this.object = $(
       "<div style='z-index:-1;margin:0;padding:0; overflow:hidden;position:absolute; bottom: 0' id='" +
-      $this.id +
-      "'></div>'"
+        $this.id +
+        "'></div>'"
     ).appendTo("footer#footer");
 
     $this.ww = $(window).width();
@@ -1986,15 +1986,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     $("body").prepend(
       "<style>.shape_background {transform-origin:center; width:80px; height:80px; background: " +
-      $this.style.bubbles_color +
-      "; position: absolute}</style>"
+        $this.style.bubbles_color +
+        "; position: absolute}</style>"
     );
 
-    for (i = 0;i < $this.bubbles_number;i++) {
+    for (i = 0; i < $this.bubbles_number; i++) {
       $this.generate_bubbles();
     }
   };
-  background.generate_bubbles = function() {
+  background.generate_bubbles = function () {
     var $this = this;
     var base = $("<div class='shape_background'></div>");
     var shape_type = $this.shape ? $this.shape : Math.floor($this.rn(3, 4));
@@ -2038,14 +2038,14 @@ document.addEventListener("DOMContentLoaded", () => {
           "scale(" + rn_size + ") rotate(" + $this.rn(-360, 360) + "deg)",
         opacity: 0,
       },
-      $this.rn($this.speed[ 0 ], $this.speed[ 1 ]),
-      function() {
+      $this.rn($this.speed[0], $this.speed[1]),
+      function () {
         $(this).remove();
         $this.generate_bubbles();
       }
     );
   };
-  background.rn = function(from, to, arr) {
+  background.rn = function (from, to, arr) {
     if (arr) {
       return Math.random() * (to - from + 1) + from;
     } else {
