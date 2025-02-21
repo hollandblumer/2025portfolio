@@ -1583,7 +1583,7 @@ function drawFooterAnimImage() {
     global_width;
 
   if (window.innerWidth > 992) {
-    global_width = parentFooter.clientWidth * 2;
+    global_width = parentFooter.clientWidth * 1;
   } else {
     global_width = parentFooter.clientWidth * 10;
   }
