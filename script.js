@@ -1585,7 +1585,7 @@ function drawFooterAnimImage() {
   if (window.innerWidth > 992) {
     global_width = parentFooter.clientWidth * 2;
   } else {
-    global_width = parentFooter.clientWidth * 20;
+    global_width = parentFooter.clientWidth * 10;
   }
   /**
    * Compensate for High Density Screens
@@ -1617,7 +1617,10 @@ function drawFooterAnimImage() {
 
   var logoLocation = {
     x: global_center.x - logoDimensions.x / 2,
-    y: global_center.y - logoDimensions.y / 2,
+    y:
+      window.innerWidth > 992
+        ? global_center.y - logoDimensions.y / 2
+        : global_center.y / 2.5 - logoDimensions.y / 2.5, // Moves it higher for mobile
   };
 
   var particleArr = [];
