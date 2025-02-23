@@ -2057,3 +2057,28 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   background.initialize();
 });
+
+document
+  .getElementById("canvas-reference")
+  .addEventListener("click", (event) => {
+    const canvasRect = event.target.getBoundingClientRect();
+    const scaleX = global_width / canvasRect.width;
+    const scaleY = global_height / canvasRect.height;
+    const clickX = (event.clientX - canvasRect.left) * scaleX;
+    const clickY = (event.clientY - canvasRect.top) * scaleY;
+
+    let instX = 250,
+      instY = global_height - 200,
+      instSize = 150;
+    if (window.innerWidth <= 992) instX = 50;
+    if (window.innerWidth <= 470) instY = global_height / 2 + 500;
+
+    if (
+      clickX >= instX &&
+      clickX <= instX + instSize &&
+      clickY >= instY &&
+      clickY <= instY + instSize
+    ) {
+      window.open("https://www.instagram.com/hollandblumer", "_blank");
+    }
+  });

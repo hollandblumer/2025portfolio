@@ -83,7 +83,7 @@ body #fps {
   border: 2px solid black;
   /* Adjust the width and color as needed */
   background-color: transparent;
-  z-index: 100000;
+  z-index: 1000000;
   /* Make sure it's above the background */
 }
 
@@ -91,6 +91,7 @@ body #fps {
   transform-style: preserve-3d;
   transform: perspective(800px) scale(1.2) rotateZ(1deg);
   position: absolute;
+  z-index: 1000000;
 }
 
 .square {
@@ -767,4 +768,8 @@ textarea {
   body.loaded .contact-page {
     width: 65%;
   }
+}
+
+.inst-logo {
+  z-index: 20000;
 }
