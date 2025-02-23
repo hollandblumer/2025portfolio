@@ -773,3 +773,11 @@ textarea {
 .inst-logo {
   z-index: 20000;
 }
+
+#text_left_visible {
+  opacity: 0.5;
+}
+
+#text_right_visible {
+  opacity: 0.5;
+}
