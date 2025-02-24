@@ -1,41 +1,38 @@
+const contactForm = document.getElementById("contact-form");
 const messageInput = document.getElementById("message");
-const charCount = document.getElementById("current");
+const nameInput = document.querySelector("input#name");
 
-messageInput.addEventListener("input", function() {
-  const currentLength = this.value.length;
-  charCount.textContent = currentLength;
+messageInput.addEventListener("input", () => {
+  const currentLength = messageInput.value.length;
 });
 
-document
-  .getElementById("contact-form")
-  .addEventListener("submit", function(e) {
-    e.preventDefault();
+nameInput.addEventListener("input", (event) => {
+  console.log("Name:", event.target.value);
+});
 
-    // Replace 'your-form-id' in the form action with your actual Formspree endpoint
-    fetch(this.action, {
-      method: "POST",
-      body: new FormData(this),
-      headers: {
-        Accept: "application/json",
-      },
+contactForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const formData = new FormData(contactForm);
+
+  fetch(contactForm.action, {
+    method: "POST",
+    body: formData,
+    headers: {
+      Accept: "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.ok) {
+        alert("Message sent successfully!");
+        contactForm.reset();
+      } else {
+        throw new Error("Error sending message");
+      }
     })
-      .then((response) => {
-        if (response.ok) {
-          alert("Message sent successfully!");
-          this.reset();
-          charCount.textContent = "0";
-        } else {
-          throw new Error("Error sending message");
-        }
-      })
-      .catch((error) => {
-        alert("Error sending message. Please try again.");
-      });
-  });
-
-
-const input = document.querySelector('input#name');
-input.addEventListener('input', (event) => {
-  console.log(event.target.value);
-
-})
+    .catch((error) => {
+      console.error("Error sending message:", error);
+      alert("Error sending message. Please try again.");
+    });
+});
