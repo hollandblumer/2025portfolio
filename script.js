@@ -1024,12 +1024,19 @@ function drawWebsiteAnimImage(isFirst) {
   function initParticles() {
     TweenLite.ticker.addEventListener("tick", animate);
 
+    // Get pixel data once to improve performance
     const pixels = contextReference.getImageData(
       0,
       0,
       global_width,
       global_height
     ).data;
+
+    // Initialize Quadtree for efficient spatial partitioning
+    let quadtree = new Quadtree(
+      { x: 0, y: 0, width: global_width, height: global_height },
+      4
+    );
 
     for (let y = 0; y < global_height; y += particleAttributes.spacing) {
       for (let x = 0; x < global_width; x += particleAttributes.spacing) {
@@ -1040,6 +1047,9 @@ function drawWebsiteAnimImage(isFirst) {
           const particle = new Particle(x, y);
           particleArr.push(particle);
 
+          // Insert the particle into the quadtree for fast lookup
+          quadtree.insert(particle);
+
           // Move particles using GSAP
           TweenLite.to(particle, randomNumber(1, 2), {
             x: particle.originX,
@@ -1049,14 +1059,6 @@ function drawWebsiteAnimImage(isFirst) {
         }
       }
     }
-  }
-
-  if (isFirst) {
-    setTimeout(() => {
-      init();
-    }, 3000);
-  } else {
-    init();
   }
 
   /* --------------------------
@@ -1278,25 +1280,33 @@ function drawWebsiteAnimImage(isFirst) {
   }
 
   document.body.addEventListener("mousedown", function () {
-    document.querySelector(".portfolio-slider").classList.add("touch-active");
-    for (var i = 0; i < particleArr.length; i++) {
-      var p = particleArr[i];
-      var angle = Math.atan2(p.y - global_center.y, p.x - global_center.x);
-      var distance = randomNumber(150, 300);
+    let range = {
+      x: global_center.x - 300,
+      y: global_center.y - 300,
+      width: 600,
+      height: 600,
+    };
+    let nearbyParticles = quadtree.query(range);
 
-      var xTarget = p.originX + Math.cos(angle) * distance;
-      var yTarget = p.originY + Math.sin(angle) * distance;
-
+    for (let p of nearbyParticles) {
+      let angle = Math.atan2(p.y - global_center.y, p.x - global_center.x);
+      let distance = randomNumber(150, 300);
+      let xTarget = p.originX + Math.cos(angle) * distance;
+      let yTarget = p.originY + Math.sin(angle) * distance;
       TweenLite.to(p, randomNumber(1, 1.5), { x: xTarget, y: yTarget });
     }
   });
 
   document.body.addEventListener("mouseup", function () {
-    document
-      .querySelector(".portfolio-slider")
-      .classList.remove("touch-active");
-    for (var i = 0; i < particleArr.length; i++) {
-      var p = particleArr[i];
+    let range = {
+      x: global_center.x - 300,
+      y: global_center.y - 300,
+      width: 600,
+      height: 600,
+    };
+    let nearbyParticles = quadtree.query(range);
+
+    for (let p of nearbyParticles) {
       TweenLite.to(p, randomNumber(1, 2), { x: p.originX, y: p.originY });
     }
   });
