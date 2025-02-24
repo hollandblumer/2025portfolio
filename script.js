@@ -2055,10 +2055,14 @@ document.addEventListener("DOMContentLoaded", () => {
     threshold: 0.5,
   };
 
-  const intersectionCallback = (entries) => {
+  let footerTriggered = false;
+
+  const intersectionCallback = (entries, observer) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
+      if (entry.isIntersecting && !footerTriggered) {
         drawFooterAnimImage();
+        footerTriggered = true;
+        observer.unobserve(entry.target); // Stops observing after the first trigger
       }
     });
   };
