@@ -40,13 +40,14 @@ body > *:not(.wrapper) {
   opacity: 0;
   transition: opacity 1s;
 }
-body:not(.loaded) > *:not(.wrapper) {
-  opacity: 0 !important;
-  visibility: hidden !important;
-}
 
 body.loaded > *:not(.wrapper) {
   opacity: 1;
+}
+
+body:not(.loaded) > *:not(.wrapper) {
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 
 body.loaded > .wrapper {
@@ -97,7 +98,7 @@ body #fps {
   border: 2px solid black;
   /* Adjust the width and color as needed */
   background-color: transparent;
-  z-index: 10000000;
+  z-index: 100000;
   /* Make sure it's above the background */
 }
 
@@ -105,6 +106,11 @@ body #fps {
   transform-style: preserve-3d;
   transform: perspective(800px) scale(1.2) rotateZ(1deg);
   position: absolute;
+}
+iframe {
+  aspect-ratio: 16 / 9;
+  width: 100%; /* change this to a fixed width, or create a container with a width. */
+  height: 100%;
 }
 
 .square {
@@ -156,7 +162,7 @@ body #fps {
 }
 
 footer#footer {
-  margin-top: 100lvh;
+  margin-top: 100vh;
   width: 100%;
   height: 300px;
   position: relative;
@@ -171,7 +177,7 @@ footer#footer #img2 {
 }
 footer#footer .footer__text {
   width: 50%;
-  font-size: 24px;
+  font-size: 20px;
   font-family: "Outfit";
   font-weight: 300;
   color: #dcdcdc;
@@ -299,7 +305,9 @@ body.loaded .graphics-slider.visible {
 }
 
 .portfolio-slider video,
-.graphics-slider video {
+.graphics-slider video,
+.portfolio-slider iframe,
+.graphics-slider iframe {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -483,7 +491,6 @@ body.loaded .contact-page.visible {
   position: relative;
   z-index: 1;
   background: #d0b38b;
-  display: none;
 }
 
 .contact-page form {
@@ -735,8 +742,8 @@ text.read-more {
   display: flex;
   align-items: center;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 60px;
+  right: 20px;
 }
 
 @keyframes rotate {
@@ -909,6 +916,14 @@ text.read-more {
   .click-icon-for-codepen {
     bottom: 60px;
   }
+  .read-more-box {
+    top: 20px;
+    right: 20px;
+  }
+  svg.read-more {
+    width: 90px;
+    height: 90px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -917,6 +932,15 @@ text.read-more {
     right: 8px;
     width: 52px;
     height: 45px;
+  }
+
+  .read-more-box {
+    top: 30px;
+    right: 0px;
+  }
+  svg.read-more {
+    width: 70px;
+    height: 70px;
   }
 
   #menu_container {
@@ -945,6 +969,10 @@ text.read-more {
 
   .form-group .input-text {
     padding: 0;
+  }
+  .substack-logo-svg.read-more {
+    height: 20px !important;
+    width: 20px !important;
   }
 
   body.loaded .portfolio-slider,
@@ -1018,32 +1046,96 @@ text.read-more {
 }
 @media (max-width: 471px) {
   button#menu {
-    top: 20px;
+    top: 50px;
     right: 10px;
     width: 52px;
     height: 40px;
-    /* border: 1px solid red; */
+    border: 1px solid red;
+  }
+  .click-icon-for-instagram,
+  .click-icon-for-substack,
+  .click-icon-for-codepen {
+    left: 15px;
+    transform: scale(1.1);
+    border: 4px solid transparent;
   }
   .click-icon-for-instagram {
     bottom: 85px;
-    left: 15px;
   }
   .click-icon-for-substack {
     bottom: 160px;
-    left: 15px;
   }
   .click-icon-for-codepen {
     bottom: 231px;
-    left: 15px;
   }
 }
 @media (max-width: 380px) {
   footer#footer {
     height: 330px;
   }
+  .click-icon-for-instagram,
+  .click-icon-for-substack,
+  .click-icon-for-codepen {
+    transform: scaleY(1.24);
+  }
+  .click-icon-for-instagram {
+    bottom: 75px;
+  }
+  .click-icon-for-substack {
+    bottom: 145px;
+  }
+  .click-icon-for-codepen {
+    bottom: 210px;
+  }
 }
 @media (max-width: 350px) {
   footer#footer {
     height: 350px;
+  }
+}
+@media (max-width: 320px) {
+  .click-icon-for-instagram,
+  .click-icon-for-substack,
+  .click-icon-for-codepen {
+    transform: scaleY(1.24);
+  }
+  .click-icon-for-instagram {
+    bottom: 75px;
+  }
+  .click-icon-for-substack {
+    bottom: 145px;
+  }
+  .click-icon-for-codepen {
+    bottom: 210px;
+  }
+}
+
+@media (max-width: 300px) {
+  footer#footer {
+    height: 350px;
+  }
+  .click-icon-for-instagram {
+    bottom: 60px;
+  }
+  .click-icon-for-substack {
+    bottom: 130px;
+  }
+  .click-icon-for-codepen {
+    bottom: 200px;
+  }
+}
+
+@media (max-height: 700px) and (max-width: 476px) {
+  .click-icon-for-instagram {
+    bottom: 80px;
+    transform: scaleX(1.1) translateX(5px);
+  }
+  .click-icon-for-substack {
+    bottom: 155px;
+    transform: scaleX(1.1) translateX(5px);
+  }
+  .click-icon-for-codepen {
+    bottom: 230px;
+    transform: scaleX(1.1) translateX(5px);
   }
 }

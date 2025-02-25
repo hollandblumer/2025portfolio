@@ -10,7 +10,7 @@
 /* --------------------------
  * CANVAS VARIABLES
  * -------------------------- */
-function drawHeroAnimImageOpened(isFirst = false) {
+function drawHeroAnimImageOpened() {
   /* --------------------------
    * CANVAS VARIABLES
    * -------------------------- */
@@ -128,7 +128,7 @@ function drawHeroAnimImageOpened(isFirst = false) {
       contextReference.drawImage(inst, 50, global_height - 200, 150, 150);
       contextReference.drawImage(substack, 260, global_height - 190, 130, 130);
       contextReference.drawImage(codepen, 450, global_height - 200, 150, 150);
-      particleAttributes = { spacing: 10, radius: 4 }; //yess this is menu desktop screen
+      particleAttributes = { spacing: 10, radius: 5 };
       contextReference.drawImage(
         image,
         logoLocation.x,
@@ -155,7 +155,7 @@ function drawHeroAnimImageOpened(isFirst = false) {
       contextReference.drawImage(inst, 50, global_height - 270, 150, 150);
       contextReference.drawImage(substack, 260, global_height - 260, 130, 130);
       contextReference.drawImage(codepen, 450, global_height - 270, 150, 150);
-      particleAttributes = { spacing: 10, radius: 5 };
+      particleAttributes = { spacing: 4, radius: 2 };
       contextReference.drawImage(
         image,
         logoLocation.x,
@@ -182,7 +182,7 @@ function drawHeroAnimImageOpened(isFirst = false) {
       contextReference.drawImage(inst, 30, global_height - 270, 120, 120);
       contextReference.drawImage(substack, 35, global_height - 420, 110, 110);
       contextReference.drawImage(codepen, 30, global_height - 570, 120, 120);
-      particleAttributes = { spacing: 10, radius: 5 };
+      particleAttributes = { spacing: 4, radius: 2 };
       logoDimensions = { x: 500, y: 500 };
       logoLocation = {
         x: global_center.x - logoDimensions.x / 2,
@@ -210,11 +210,11 @@ function drawHeroAnimImageOpened(isFirst = false) {
         textWidth,
         textHeight
       );
-      contextReference.drawImage(burger, global_width - 120, 30, 100, 100);
+      contextReference.drawImage(burger, global_width - 120, 90, 100, 100);
       contextReference.drawImage(inst, 30, global_height - 270, 120, 120);
       contextReference.drawImage(substack, 35, global_height - 420, 110, 110);
       contextReference.drawImage(codepen, 30, global_height - 570, 120, 120);
-      particleAttributes = { spacing: 4, radius: 2 }; // this is menu mobile screen
+      particleAttributes = { spacing: 4, radius: 2 };
       logoDimensions = { x: 500, y: 500 };
       logoLocation = {
         x: global_center.x - logoDimensions.x / 2,
@@ -410,7 +410,7 @@ function drawHeroAnimImage(isFirst = false) {
   };
 
   var particleArr = [];
-  var particleAttributes = { spacing: 10, radius: 4 };
+  var particleAttributes = { spacing: 10, radius: 5 };
   var colorPalette = [
     "rgba(255, 255, 255, 1)",
     "rgba(240, 240, 240, 1)",
@@ -489,7 +489,7 @@ function drawHeroAnimImage(isFirst = false) {
       contextReference.drawImage(inst, 50, global_height - 200, 150, 150);
       contextReference.drawImage(substack, 260, global_height - 190, 130, 130);
       contextReference.drawImage(codepen, 450, global_height - 200, 150, 150);
-      particleAttributes = { spacing: 10, radius: 5 }; //this one  is for desktop normal screen home page
+      particleAttributes = { spacing: 10, radius: 5 };
       contextReference.drawImage(
         image,
         logoLocation.x,
@@ -516,7 +516,7 @@ function drawHeroAnimImage(isFirst = false) {
       contextReference.drawImage(inst, 50, global_height - 270, 150, 150);
       contextReference.drawImage(substack, 260, global_height - 260, 130, 130);
       contextReference.drawImage(codepen, 450, global_height - 270, 150, 150);
-      particleAttributes = { spacing: 10, radius: 5 };
+      particleAttributes = { spacing: 4, radius: 2 };
       contextReference.drawImage(
         image,
         logoLocation.x,
@@ -543,7 +543,7 @@ function drawHeroAnimImage(isFirst = false) {
       contextReference.drawImage(inst, 30, global_height - 270, 120, 120);
       contextReference.drawImage(substack, 35, global_height - 420, 110, 110);
       contextReference.drawImage(codepen, 30, global_height - 570, 120, 120);
-      particleAttributes = { spacing: 6, radius: 2 }; //for small screen home page
+      particleAttributes = { spacing: 6, radius: 2 };
       logoDimensions = { x: 500, y: 500 };
       logoLocation = {
         x: global_center.x - logoDimensions.x / 2,
@@ -571,11 +571,11 @@ function drawHeroAnimImage(isFirst = false) {
         textWidth,
         textHeight
       );
-      contextReference.drawImage(burger, global_width - 120, 30, 100, 100);
+      contextReference.drawImage(burger, global_width - 120, 90, 100, 100);
       contextReference.drawImage(inst, 30, global_height - 270, 120, 120);
       contextReference.drawImage(substack, 35, global_height - 420, 110, 110);
       contextReference.drawImage(codepen, 30, global_height - 570, 120, 120);
-      particleAttributes = { spacing: 6, radius: 3 }; //yess this is mobile home page
+      particleAttributes = { spacing: 6, radius: 3 };
       logoDimensions = { x: 500, y: 500 };
       logoLocation = {
         x: global_center.x - logoDimensions.x / 2,
@@ -878,8 +878,7 @@ function drawWebsiteAnimImage(isFirst) {
           h: global_height * 0.34,
         },
         particleSpacing: 10,
-        particleRadius: 4,
-        //for large screens website animation
+        particleRadius: 5,
       });
     } else if (window.innerWidth > 992) {
       drawElements({
@@ -898,7 +897,7 @@ function drawWebsiteAnimImage(isFirst) {
           h: global_height * 0.44,
         },
         particleSpacing: 10,
-        particleRadius: 4,
+        particleRadius: 5,
       });
     } else if (window.innerWidth > 576) {
       drawElements({
@@ -916,7 +915,7 @@ function drawWebsiteAnimImage(isFirst) {
           w: 1600,
           h: global_height * 0.34,
         },
-        particleSpacing: 2,
+        particleSpacing: 4,
         particleRadius: 2,
       });
     } else {
@@ -924,20 +923,19 @@ function drawWebsiteAnimImage(isFirst) {
         textWidth,
         textHeight,
         rightX,
-        rightY: rightY - 120,
-        burgerPos: { x: global_width - 120, y: 30, w: 100, h: 80 },
-        instPos: { x: 30, y: global_height - 270, w: 150, h: 150 },
-        substackPos: { x: 35, y: global_height - 420, w: 150, h: 150 },
-        codepenPos: { x: 30, y: global_height - 670, w: 150, h: 150 },
+        rightY: rightY,
+        burgerPos: { x: global_width - 120, y: 90, w: 100, h: 80 },
+        instPos: { x: 30, y: global_height - 270, w: 120, h: 120 },
+        substackPos: { x: 35, y: global_height - 420, w: 110, h: 110 },
+        codepenPos: { x: 30, y: global_height - 570, w: 120, h: 120 },
         imagePos: {
           x: centerX - 250,
           y: centerY - 250,
           w: 500,
           h: 500,
         },
-        particleSpacing: 5,
+        particleSpacing: 4,
         particleRadius: 2,
-        // this one is website mobile screen
       });
     }
 
@@ -1021,10 +1019,9 @@ function drawWebsiteAnimImage(isFirst) {
     }
     particleAttributes = { spacing: particleSpacing, radius: particleRadius };
   }
+
   function initParticles() {
     TweenLite.ticker.addEventListener("tick", animate);
-
-    // Get pixel data once to improve performance
     const pixels = contextReference.getImageData(
       0,
       0,
@@ -1032,25 +1029,12 @@ function drawWebsiteAnimImage(isFirst) {
       global_height
     ).data;
 
-    // Initialize Quadtree for efficient spatial partitioning
-    let quadtree = new Quadtree(
-      { x: 0, y: 0, width: global_width, height: global_height },
-      4
-    );
-
     for (let y = 0; y < global_height; y += particleAttributes.spacing) {
       for (let x = 0; x < global_width; x += particleAttributes.spacing) {
         const index = (y * global_width + x) * 4;
-
         if (pixels[index + 3] === 0) {
-          // Only create particles where there is transparency
           const particle = new Particle(x, y);
           particleArr.push(particle);
-
-          // Insert the particle into the quadtree for fast lookup
-          quadtree.insert(particle);
-
-          // Move particles using GSAP
           TweenLite.to(particle, randomNumber(1, 2), {
             x: particle.originX,
             y: particle.originY,
@@ -1059,6 +1043,13 @@ function drawWebsiteAnimImage(isFirst) {
         }
       }
     }
+  }
+  if (isFirst) {
+    setTimeout(() => {
+      init();
+    }, 3000);
+  } else {
+    init();
   }
 
   /* --------------------------
@@ -1280,33 +1271,25 @@ function drawWebsiteAnimImage(isFirst) {
   }
 
   document.body.addEventListener("mousedown", function () {
-    let range = {
-      x: global_center.x - 300,
-      y: global_center.y - 300,
-      width: 600,
-      height: 600,
-    };
-    let nearbyParticles = quadtree.query(range);
+    document.querySelector(".portfolio-slider").classList.add("touch-active");
+    for (var i = 0; i < particleArr.length; i++) {
+      var p = particleArr[i];
+      var angle = Math.atan2(p.y - global_center.y, p.x - global_center.x);
+      var distance = randomNumber(150, 300);
 
-    for (let p of nearbyParticles) {
-      let angle = Math.atan2(p.y - global_center.y, p.x - global_center.x);
-      let distance = randomNumber(150, 300);
-      let xTarget = p.originX + Math.cos(angle) * distance;
-      let yTarget = p.originY + Math.sin(angle) * distance;
+      var xTarget = p.originX + Math.cos(angle) * distance;
+      var yTarget = p.originY + Math.sin(angle) * distance;
+
       TweenLite.to(p, randomNumber(1, 1.5), { x: xTarget, y: yTarget });
     }
   });
 
   document.body.addEventListener("mouseup", function () {
-    let range = {
-      x: global_center.x - 300,
-      y: global_center.y - 300,
-      width: 600,
-      height: 600,
-    };
-    let nearbyParticles = quadtree.query(range);
-
-    for (let p of nearbyParticles) {
+    document
+      .querySelector(".portfolio-slider")
+      .classList.remove("touch-active");
+    for (var i = 0; i < particleArr.length; i++) {
+      var p = particleArr[i];
       TweenLite.to(p, randomNumber(1, 2), { x: p.originX, y: p.originY });
     }
   });
@@ -1346,389 +1329,387 @@ function drawWebsiteAnimImage(isFirst) {
   }
   return cleanup;
 }
+function drawContactAnimImage(isFirst) {
+  var canvasInteractive = document.getElementById("canvas-interactive"),
+    canvasReference = document.getElementById("canvas-reference"),
+    contextInteractive = canvasInteractive.getContext("2d"),
+    contextReference = canvasReference.getContext("2d"),
+    image = document.getElementById("contactbase"),
+    text_left_image = document.getElementById("text_left"),
+    text_left_visible_image = document.getElementById("text_left_visible"),
+    text_right_image = document.getElementById("text_right"),
+    text_right_visible_image = document.getElementById("text_right_visible"),
+    burger = document.getElementById("close"),
+    inst = document.getElementById("inst"),
+    substack = document.getElementById("substack"),
+    codepen = document.getElementById("codepen"),
+    global_width = window.innerWidth * 2,
+    global_height = window.innerHeight * 2;
 
-// function drawContactAnimImage(isFirst) {
-//   var canvasInteractive = document.getElementById("canvas-interactive"),
-//     canvasReference = document.getElementById("canvas-reference"),
-//     contextInteractive = canvasInteractive.getContext("2d"),
-//     contextReference = canvasReference.getContext("2d"),
-//     image = document.getElementById("contactbase"),
-//     text_left_image = document.getElementById("text_left"),
-//     text_left_visible_image = document.getElementById("text_left_visible"),
-//     text_right_image = document.getElementById("text_right"),
-//     text_right_visible_image = document.getElementById("text_right_visible"),
-//     burger = document.getElementById("close"),
-//     inst = document.getElementById("inst"),
-//     substack = document.getElementById("substack"),
-//     codepen = document.getElementById("codepen"),
-//     global_width = window.innerWidth * 2,
-//     global_height = window.innerHeight * 2;
+  canvasInteractive.width = canvasReference.width = global_width;
+  canvasInteractive.height = canvasReference.height = global_height;
+  canvasInteractive.style.width = canvasReference.style.width =
+    global_width / 2;
+  canvasInteractive.style.height = canvasReference.style.height =
+    global_height / 2;
 
-//   canvasInteractive.width = canvasReference.width = global_width;
-//   canvasInteractive.height = canvasReference.height = global_height;
-//   canvasInteractive.style.width = canvasReference.style.width =
-//     global_width / 2;
-//   canvasInteractive.style.height = canvasReference.style.height =
-//     global_height / 2;
+  /* --------------------------
+   * LOGO VARIABLES
+   * -------------------------- */
 
-//   /* --------------------------
-//    * LOGO VARIABLES
-//    * -------------------------- */
+  var logoDimensions = { x: 1800, y: 1290 };
+  var global_center = { x: global_width / 2, y: global_height / 2 };
+  var logoLocation = {
+    x: global_center.x - logoDimensions.x / 2,
+    y: global_center.y - logoDimensions.y / 2,
+  };
 
-//   var logoDimensions = { x: 1800, y: 1290 };
-//   var global_center = { x: global_width / 2, y: global_height / 2 };
-//   var logoLocation = {
-//     x: global_center.x - logoDimensions.x / 2,
-//     y: global_center.y - logoDimensions.y / 2,
-//   };
+  var particleArr = [];
+  var particleAttributes = { spacing: 10, radius: 5 };
+  var colorPalette = [
+    "rgba(255, 255, 255, 1)",
+    "rgba(240, 240, 240, 1)",
+    "rgba(220, 220, 220, 1)",
+    "rgba(200, 200, 200, 1)",
+  ];
 
-//   var particleArr = [];
-//   var particleAttributes = { spacing: 10, radius: 4 };
-//   var colorPalette = [
-//     "rgba(255, 255, 255, 1)",
-//     "rgba(240, 240, 240, 1)",
-//     "rgba(220, 220, 220, 1)",
-//     "rgba(200, 200, 200, 1)",
-//   ];
+  /* --------------------------
+   * PARTICLE CLASS
+   * -------------------------- */
 
-//   /* --------------------------
-//    * PARTICLE CLASS
-//    * -------------------------- */
+  function Particle(x, y) {
+    this.originX = x;
+    this.originY = y;
+    this.x = randomNumber(-200, global_width + 200);
+    this.y = randomNumber(-200, global_height + 200);
+    this.radius = particleAttributes.radius * randomNumber(0.7, 1);
+    this.color = colorPalette[Math.floor(randomNumber(0, colorPalette.length))];
+    this.shapeOffsets = Array.from(
+      { length: 8 },
+      () => this.radius * (0.8 + Math.random() * 0.4)
+    );
+  }
 
-//   function Particle(x, y) {
-//     this.originX = x;
-//     this.originY = y;
-//     this.x = randomNumber(-200, global_width + 200);
-//     this.y = randomNumber(-200, global_height + 200);
-//     this.radius = particleAttributes.radius * randomNumber(0.7, 1);
-//     this.color = colorPalette[Math.floor(randomNumber(0, colorPalette.length))];
-//     this.shapeOffsets = Array.from(
-//       { length: 8 },
-//       () => this.radius * (0.8 + Math.random() * 0.4)
-//     );
-//   }
+  /* --------------------------
+   * INIT
+   * -------------------------- */
 
-//   /* --------------------------
-//    * INIT
-//    * -------------------------- */
+  function init() {
+    const imgLeftAspect = text_left_image.width / text_left_image.height;
+    const canvasAspect = global_width / global_height;
+    const imgMaxWidth = global_width * 0.4;
 
-//   function init() {
-//     const imgLeftAspect = text_left_image.width / text_left_image.height;
-//     const canvasAspect = global_width / global_height;
-//     const imgMaxWidth = global_width * 0.4;
+    let textWidth, textHeight;
 
-//     let textWidth, textHeight;
+    if (window.innerWidth > 1500) {
+      textWidth = 1800;
+      textHeight = 1800 / imgLeftAspect;
+    } else if (window.innerWidth > 576) {
+      if (canvasAspect > imgLeftAspect) {
+        // textHeight = global_height + imgMaxWidth;
+        // textWidth = (global_height + imgMaxWidth) * imgLeftAspect;
+        textWidth = 1500;
+        textHeight = 1500 / imgLeftAspect;
+      } else {
+        textWidth = global_width - imgMaxWidth;
+        textHeight = (global_width - imgMaxWidth) / imgLeftAspect;
+      }
+    } else if (window.innerWidth > 470) {
+      textWidth = 900;
+      textHeight = 900 / imgLeftAspect;
+    } else {
+      textWidth = 600;
+      textHeight = 600 / imgLeftAspect;
+    }
 
-//     if (window.innerWidth > 1500) {
-//       textWidth = 1800;
-//       textHeight = 1800 / imgLeftAspect;
-//     } else if (window.innerWidth > 576) {
-//       if (canvasAspect > imgLeftAspect) {
-//         // textHeight = global_height + imgMaxWidth;
-//         // textWidth = (global_height + imgMaxWidth) * imgLeftAspect;
-//         textWidth = 1500;
-//         textHeight = 1500 / imgLeftAspect;
-//       } else {
-//         textWidth = global_width - imgMaxWidth;
-//         textHeight = (global_width - imgMaxWidth) / imgLeftAspect;
-//       }
-//     } else if (window.innerWidth > 470) {
-//       textWidth = 900;
-//       textHeight = 900 / imgLeftAspect;
-//     } else {
-//       textWidth = 600;
-//       textHeight = 600 / imgLeftAspect;
-//     }
+    const rightX = global_width - textWidth - 30;
+    const rightY = global_height - textHeight - 30;
+    if (window.innerWidth > 1200) {
+      contextReference.drawImage(
+        text_left_image,
+        30,
+        30,
+        textWidth,
+        textHeight
+      );
+      contextReference.drawImage(
+        text_right_image,
+        rightX,
+        rightY,
+        textWidth,
+        textHeight
+      );
+      contextReference.drawImage(burger, global_width - 190, 30, 150, 125);
+      contextReference.drawImage(inst, 50, global_height - 200, 150, 150);
+      contextReference.drawImage(substack, 260, global_height - 190, 130, 130);
+      contextReference.drawImage(codepen, 450, global_height - 200, 150, 150);
+      particleAttributes = { spacing: 10, radius: 5 };
+    } else if (window.innerWidth > 992) {
+      contextReference.drawImage(
+        text_left_image,
+        30,
+        30,
+        textWidth,
+        textHeight
+      );
+      contextReference.drawImage(
+        text_right_image,
+        rightX,
+        rightY,
+        textWidth,
+        textHeight
+      );
+      contextReference.drawImage(burger, global_width - 190, 30, 150, 125);
+      contextReference.drawImage(inst, 50, global_height - 200, 150, 150);
+      contextReference.drawImage(substack, 260, global_height - 190, 130, 130);
+      contextReference.drawImage(codepen, 450, global_height - 200, 150, 150);
+      particleAttributes = { spacing: 10, radius: 5 };
+    } else if (window.innerWidth > 576) {
+      contextReference.drawImage(
+        text_left_image,
+        30,
+        30,
+        textWidth,
+        textHeight
+      );
+      contextReference.drawImage(
+        text_right_image,
+        rightX,
+        rightY,
+        textWidth,
+        textHeight
+      );
+      contextReference.drawImage(burger, global_width - 170, 30, 100, 90);
+      contextReference.drawImage(inst, 50, global_height - 270, 150, 150);
+      contextReference.drawImage(substack, 260, global_height - 260, 130, 130);
+      contextReference.drawImage(codepen, 450, global_height - 270, 150, 150);
+      particleAttributes = { spacing: 4, radius: 2 };
+      contextReference.drawImage(
+        image,
+        logoLocation.x + 310,
+        logoLocation.y + 100,
+        1200,
+        940
+      );
+      contextReference.drawImage(slider, 100, 100, 100, 100);
+    } else if (window.innerWidth > 470) {
+      contextReference.drawImage(
+        text_left_image,
+        30,
+        30,
+        textWidth,
+        textHeight
+      );
+      contextReference.drawImage(
+        text_right_image,
+        rightX,
+        rightY,
+        textWidth,
+        textHeight
+      );
+      contextReference.drawImage(burger, global_width - 120, 150, 100, 100);
+      contextReference.drawImage(inst, 30, global_height - 270, 120, 120);
+      contextReference.drawImage(substack, 35, global_height - 420, 110, 110);
+      contextReference.drawImage(codepen, 30, global_height - 570, 120, 120);
+      particleAttributes = { spacing: 4, radius: 2 };
+      logoDimensions = { x: 500, y: 500 };
+      logoLocation = {
+        x: global_center.x - logoDimensions.x / 2,
+        y: global_center.y - logoDimensions.y / 2,
+      };
+      contextReference.drawImage(
+        image,
+        logoLocation.x,
+        logoLocation.y,
+        500,
+        500
+      );
+    } else {
+      contextReference.drawImage(
+        text_left_visible_image,
+        10,
+        30,
+        textWidth,
+        textHeight
+      );
+      contextReference.drawImage(
+        text_right_visible_image,
+        rightX + 20,
+        rightY,
+        textWidth,
+        textHeight
+      );
+      contextReference.drawImage(burger, global_width - 120, 90, 100, 100);
+      contextReference.drawImage(inst, 30, global_height - 270, 120, 120);
+      contextReference.drawImage(substack, 35, global_height - 420, 110, 110);
+      contextReference.drawImage(codepen, 30, global_height - 570, 120, 120);
+      particleAttributes = { spacing: 4, radius: 2 };
+      logoDimensions = { x: 500, y: 500 };
+      logoLocation = {
+        x: global_center.x - logoDimensions.x / 2,
+        y: global_center.y - logoDimensions.y / 2,
+      };
+      contextReference.drawImage(
+        image,
+        logoLocation.x - 100,
+        logoLocation.y - 100,
+        700,
+        600
+      );
+    }
 
-//     const rightX = global_width - textWidth - 30;
-//     const rightY = global_height - textHeight - 30;
-//     if (window.innerWidth > 1200) {
-//       contextReference.drawImage(
-//         text_left_image,
-//         30,
-//         30,
-//         textWidth,
-//         textHeight
-//       );
-//       contextReference.drawImage(
-//         text_right_image,
-//         rightX,
-//         rightY,
-//         textWidth,
-//         textHeight
-//       );
-//       contextReference.drawImage(burger, global_width - 190, 30, 150, 125);
-//       contextReference.drawImage(inst, 50, global_height - 200, 150, 150);
-//       contextReference.drawImage(substack, 260, global_height - 190, 130, 130);
-//       contextReference.drawImage(codepen, 450, global_height - 200, 150, 150);
-//       particleAttributes = { spacing: 10, radius: 4 };
-//     } else if (window.innerWidth > 992) {
-//       contextReference.drawImage(
-//         text_left_image,
-//         30,
-//         30,
-//         textWidth,
-//         textHeight
-//       );
-//       contextReference.drawImage(
-//         text_right_image,
-//         rightX,
-//         rightY,
-//         textWidth,
-//         textHeight
-//       );
-//       contextReference.drawImage(burger, global_width - 190, 30, 150, 125);
-//       contextReference.drawImage(inst, 50, global_height - 200, 150, 150);
-//       contextReference.drawImage(substack, 260, global_height - 190, 130, 130);
-//       contextReference.drawImage(codepen, 450, global_height - 200, 150, 150);
-//       particleAttributes = { spacing: 10, radius: 5 };
-//     } else if (window.innerWidth > 576) {
-//       contextReference.drawImage(
-//         text_left_image,
-//         30,
-//         30,
-//         textWidth,
-//         textHeight
-//       );
-//       contextReference.drawImage(
-//         text_right_image,
-//         rightX,
-//         rightY,
-//         textWidth,
-//         textHeight
-//       );
-//       contextReference.drawImage(burger, global_width - 170, 30, 100, 90);
-//       contextReference.drawImage(inst, 50, global_height - 270, 150, 150);
-//       contextReference.drawImage(substack, 260, global_height - 260, 130, 130);
-//       contextReference.drawImage(codepen, 450, global_height - 270, 150, 150);
-//       particleAttributes = { spacing: 10, radius: 5 };
-//       contextReference.drawImage(
-//         image,
-//         logoLocation.x + 310,
-//         logoLocation.y + 100,
-//         1200,
-//         940
-//       );
-//       contextReference.drawImage(slider, 100, 100, 100, 100);
-//     } else if (window.innerWidth > 470) {
-//       contextReference.drawImage(
-//         text_left_image,
-//         30,
-//         30,
-//         textWidth,
-//         textHeight
-//       );
-//       contextReference.drawImage(
-//         text_right_image,
-//         rightX,
-//         rightY,
-//         textWidth,
-//         textHeight
-//       );
-//       contextReference.drawImage(burger, global_width - 120, 150, 100, 100);
-//       contextReference.drawImage(inst, 30, global_height - 270, 120, 120);
-//       contextReference.drawImage(substack, 35, global_height - 420, 110, 110);
-//       contextReference.drawImage(codepen, 30, global_height - 570, 120, 120);
-//       particleAttributes = { spacing: 10, radius: 3 };
-//       logoDimensions = { x: 500, y: 500 };
-//       logoLocation = {
-//         x: global_center.x - logoDimensions.x / 2,
-//         y: global_center.y - logoDimensions.y / 2,
-//       };
-//       contextReference.drawImage(
-//         image,
-//         logoLocation.x,
-//         logoLocation.y,
-//         500,
-//         500
-//       );
-//     } else {
-//       contextReference.drawImage(
-//         text_left_visible_image,
-//         10,
-//         30,
-//         textWidth,
-//         textHeight
-//       );
-//       contextReference.drawImage(
-//         text_right_visible_image,
-//         rightX + 20,
-//         rightY,
-//         textWidth,
-//         textHeight
-//       );
-//       contextReference.drawImage(burger, global_width - 120, 30, 100, 100);
-//       contextReference.drawImage(inst, 30, global_height - 270, 120, 120);
-//       contextReference.drawImage(substack, 35, global_height - 420, 110, 110);
-//       contextReference.drawImage(codepen, 30, global_height - 570, 120, 120);
-//       particleAttributes = { spacing: 10, radius: 3 };
-//       logoDimensions = { x: 500, y: 500 };
-//       logoLocation = {
-//         x: global_center.x - logoDimensions.x / 2,
-//         y: global_center.y - logoDimensions.y / 2,
-//       };
-//       contextReference.drawImage(
-//         image,
-//         logoLocation.x - 100,
-//         logoLocation.y - 100,
-//         700,
-//         600
-//       );
-//     }
+    TweenLite.ticker.addEventListener("tick", animate);
 
-//     TweenLite.ticker.addEventListener("tick", animate);
+    const pixels = contextReference.getImageData(
+      0,
+      0,
+      global_width,
+      global_height
+    ).data;
+    for (let y = 0; y < global_height; y += particleAttributes.spacing) {
+      for (let x = 0; x < global_width; x += particleAttributes.spacing) {
+        const index = (y * global_width + x) * 4;
+        if (pixels[index + 3] === 0) {
+          const particle = new Particle(x, y);
+          particleArr.push(particle);
+          TweenLite.to(particle, randomNumber(1, 2), {
+            x: particle.originX,
+            y: particle.originY,
+            ease: "power1.out",
+          });
+        }
+      }
+    }
+  }
 
-//     const pixels = contextReference.getImageData(
-//       0,
-//       0,
-//       global_width,
-//       global_height
-//     ).data;
-//     for (let y = 0; y < global_height; y += particleAttributes.spacing) {
-//       for (let x = 0; x < global_width; x += particleAttributes.spacing) {
-//         const index = (y * global_width + x) * 4;
-//         if (pixels[index + 3] === 0) {
-//           const particle = new Particle(x, y);
-//           particleArr.push(particle);
-//           TweenLite.to(particle, randomNumber(1, 2), {
-//             x: particle.originX,
-//             y: particle.originY,
-//             ease: "power1.out",
-//           });
-//         }
-//       }
-//     }
-//   }
+  if (isFirst) {
+    setTimeout(() => {
+      init();
+    }, 3000);
+  } else {
+    init();
+  }
 
-//   if (isFirst) {
-//     setTimeout(() => {
-//       init();
-//     }, 3000);
-//   } else {
-//     init();
-//   }
+  /* --------------------------
+   * RESIZE THE CANVAS
+   * -------------------------- */
 
-//   /* --------------------------
-//    * RESIZE THE CANVAS
-//    * -------------------------- */
+  function resize() {
+    contextInteractive.clearRect(
+      0,
+      0,
+      canvasInteractive.width,
+      canvasInteractive.height
+    );
+    TweenLite.ticker.removeEventListener("tick", animate);
+    particleArr = [];
 
-//   function resize() {
-//     contextInteractive.clearRect(
-//       0,
-//       0,
-//       canvasInteractive.width,
-//       canvasInteractive.height
-//     );
-//     TweenLite.ticker.removeEventListener("tick", animate);
-//     particleArr = [];
+    global_width = window.innerWidth * 2;
+    global_height = window.innerHeight * 2;
+    global_center = { x: global_width / 2, y: global_height / 2 };
+    logoLocation = {
+      x: global_center.x - logoDimensions.x / 2,
+      y: global_center.y - logoDimensions.y / 2,
+    };
 
-//     global_width = window.innerWidth * 2;
-//     global_height = window.innerHeight * 2;
-//     global_center = { x: global_width / 2, y: global_height / 2 };
-//     logoLocation = {
-//       x: global_center.x - logoDimensions.x / 2,
-//       y: global_center.y - logoDimensions.y / 2,
-//     };
+    canvasInteractive.width = canvasReference.width = global_width;
+    canvasInteractive.height = canvasReference.height = global_height;
+    canvasInteractive.style.width = canvasReference.style.width =
+      global_width / 2;
+    canvasInteractive.style.height = canvasReference.style.height =
+      global_height / 2;
 
-//     canvasInteractive.width = canvasReference.width = global_width;
-//     canvasInteractive.height = canvasReference.height = global_height;
-//     canvasInteractive.style.width = canvasReference.style.width =
-//       global_width / 2;
-//     canvasInteractive.style.height = canvasReference.style.height =
-//       global_height / 2;
+    init();
+    TweenLite.ticker.addEventListener("tick", animate);
+  }
 
-//     init();
-//     TweenLite.ticker.addEventListener("tick", animate);
-//   }
+  window.addEventListener("resize", resize, false);
 
-//   window.addEventListener("resize", resize, false);
+  /* --------------------------
+   * RENDER
+   * -------------------------- */
+  function drawOrganicShape(context, x, y, shapeOffsets) {
+    context.beginPath();
+    const points = shapeOffsets.length;
+    const angleStep = (Math.PI * 2) / points;
 
-//   /* --------------------------
-//    * RENDER
-//    * -------------------------- */
-//   function drawOrganicShape(context, x, y, shapeOffsets) {
-//     context.beginPath();
-//     const points = shapeOffsets.length;
-//     const angleStep = (Math.PI * 2) / points;
+    for (let i = 0; i <= points; i++) {
+      const angle = i * angleStep;
+      const offsetRadius = shapeOffsets[i % points];
+      const xPoint = x + Math.cos(angle) * offsetRadius;
+      const yPoint = y + Math.sin(angle) * offsetRadius;
 
-//     for (let i = 0; i <= points; i++) {
-//       const angle = i * angleStep;
-//       const offsetRadius = shapeOffsets[i % points];
-//       const xPoint = x + Math.cos(angle) * offsetRadius;
-//       const yPoint = y + Math.sin(angle) * offsetRadius;
+      if (i === 0) {
+        context.moveTo(xPoint, yPoint);
+      } else {
+        context.lineTo(xPoint, yPoint);
+      }
+    }
 
-//       if (i === 0) {
-//         context.moveTo(xPoint, yPoint);
-//       } else {
-//         context.lineTo(xPoint, yPoint);
-//       }
-//     }
+    context.closePath();
+  }
 
-//     context.closePath();
-//   }
+  function render() {
+    document.querySelector(".contact-page").classList.add("initial-load");
 
-//   function render() {
-//     document.querySelector(".contact-page").classList.add("initial-load");
+    contextInteractive.clearRect(0, 0, global_width, global_height);
+    for (var i = 0; i < particleArr.length; i++) {
+      var p = particleArr[i];
 
-//     contextInteractive.clearRect(0, 0, global_width, global_height);
-//     for (var i = 0; i < particleArr.length; i++) {
-//       var p = particleArr[i];
+      // Draw each particle as a consistent organic shape using precomputed offsets
+      drawOrganicShape(contextInteractive, p.x, p.y, p.shapeOffsets);
 
-//       // Draw each particle as a consistent organic shape using precomputed offsets
-//       drawOrganicShape(contextInteractive, p.x, p.y, p.shapeOffsets);
+      contextInteractive.fillStyle = p.color;
+      contextInteractive.fill();
+    }
+  }
 
-//       contextInteractive.fillStyle = p.color;
-//       contextInteractive.fill();
-//     }
-//   }
+  /* --------------------------
+   * ANIMATE
+   * -------------------------- */
 
-//   /* --------------------------
-//    * ANIMATE
-//    * -------------------------- */
+  function animate() {
+    render();
+  }
 
-//   function animate() {
-//     render();
-//   }
+  /* --------------------------
+   * INTERACTIONS
+   * -------------------------- */
 
-//   /* --------------------------
-//    * INTERACTIONS
-//    * -------------------------- */
+  document.body.addEventListener("mousedown", function () {
+    document.querySelector(".contact-page").classList.add("touch-active");
+    for (var i = 0; i < particleArr.length; i++) {
+      var p = particleArr[i];
+      var angle = Math.atan2(p.y - global_center.y, p.x - global_center.x);
+      var distance = randomNumber(150, 300);
 
-//   document.body.addEventListener("mousedown", function () {
-//     document.querySelector(".contact-page").classList.add("touch-active");
-//     for (var i = 0; i < particleArr.length; i++) {
-//       var p = particleArr[i];
-//       var angle = Math.atan2(p.y - global_center.y, p.x - global_center.x);
-//       var distance = randomNumber(150, 300);
+      var xTarget = p.originX + Math.cos(angle) * distance;
+      var yTarget = p.originY + Math.sin(angle) * distance;
 
-//       var xTarget = p.originX + Math.cos(angle) * distance;
-//       var yTarget = p.originY + Math.sin(angle) * distance;
+      TweenLite.to(p, randomNumber(1, 1.5), { x: xTarget, y: yTarget });
+    }
+  });
 
-//       TweenLite.to(p, randomNumber(1, 1.5), { x: xTarget, y: yTarget });
-//     }
-//   });
+  document.body.addEventListener("mouseup", function () {
+    document.querySelector(".contact-page").classList.remove("touch-active");
+    for (var i = 0; i < particleArr.length; i++) {
+      var p = particleArr[i];
+      TweenLite.to(p, randomNumber(1, 2), { x: p.originX, y: p.originY });
+    }
+  });
 
-//   document.body.addEventListener("mouseup", function () {
-//     document.querySelector(".contact-page").classList.remove("touch-active");
-//     for (var i = 0; i < particleArr.length; i++) {
-//       var p = particleArr[i];
-//       TweenLite.to(p, randomNumber(1, 2), { x: p.originX, y: p.originY });
-//     }
-//   });
+  /* --------------------------
+   * RANDOM FUNCTIONS
+   * -------------------------- */
 
-//   /* --------------------------
-//    * RANDOM FUNCTIONS
-//    * -------------------------- */
+  function randomWholeNumber(min, max) {
+    return Math.floor(Math.random() * (1 + max - min) + min);
+  }
 
-//   function randomWholeNumber(min, max) {
-//     return Math.floor(Math.random() * (1 + max - min) + min);
-//   }
-
-//   function randomNumber(min, max) {
-//     return Math.random() * (max - min) + min;
-//   }
-// }
-
+  function randomNumber(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+}
 function drawFooterAnimImage() {
   var parentFooter = document.getElementById("footer"),
     canvasInteractive = document.getElementById("canvas-interactive2"),
@@ -1977,43 +1958,31 @@ function drawFooterAnimImage() {
    * Touch Start
    */
 
-  let isScrolling = false;
-
-  // Detect scrolling on mobile
-  document.addEventListener("touchmove", () => {
-    isScrolling = true;
-  });
-
-  // Reset the flag after scrolling stops
-  document.addEventListener("touchend", () => {
-    setTimeout(() => {
-      isScrolling = false;
-    }, 200);
-  });
-
-  // Modify touchstart to check if scrolling is happening
   document.body.addEventListener("touchstart", function (event) {
-    if (isScrolling) return; // Ignore touches while scrolling
-
-    for (let i = 0; i < particleArr.length; i++) {
-      let p = particleArr[i];
-      let angle = Math.atan2(p.y - global_center.y, p.x - global_center.x);
-      let distance = randomNumber(150, 300);
-
-      let xTarget = p.originX + Math.cos(angle) * distance;
-      let yTarget = p.originY + Math.sin(angle) * distance;
-
-      TweenLite.to(p, randomNumber(1, 1.5), { x: xTarget, y: yTarget });
+    for (var i = 0; i < particleArr.length; i++) {
+      // Animate particles off the stage
+      TweenLite.to(particleArr[i], randomNumber(0.1, 1), {
+        y: randomExcluded(
+          -200,
+          canvasInteractive.height + 200,
+          -10,
+          canvasInteractive.height + 10
+        ),
+        x: randomNumber(-100, canvasInteractive.width + 100),
+      });
     }
   });
 
-  // Modify touchend to check if scrolling happened
-  document.body.addEventListener("touchend", function () {
-    if (isScrolling) return; // Ignore touchend events triggered by scrolling
-
-    for (let i = 0; i < particleArr.length; i++) {
-      let p = particleArr[i];
-      TweenLite.to(p, randomNumber(1, 2), { x: p.originX, y: p.originY });
+  /**
+   * Touch End
+   */
+  document.body.addEventListener("touchend", function (event) {
+    for (var i = 0; i < particleArr.length; i++) {
+      // Put the particles back at their origin
+      TweenLite.to(particleArr[i], randomNumber(1, 3), {
+        y: particleArr[i].originY,
+        x: particleArr[i].originX,
+      });
     }
   });
 
@@ -2042,7 +2011,7 @@ document.addEventListener("DOMContentLoaded", () => {
    * -------------------------- */
   setTimeout(() => {
     document.body.classList.add("loaded");
-    drawHeroAnimImageOpened();
+    drawHeroAnimImage();
   }, 3000);
 
   /* -------------------
@@ -2107,10 +2076,9 @@ document.addEventListener("DOMContentLoaded", () => {
       contactLink.onclick = (e) => {
         drawHeroAnimImageOpened(false);
         e.preventDefault();
-        window.location.href = "mailto:hollandblumer6@icloud.com";
-        /*   contactPage.classList.add("visible");
+        contactPage.classList.add("visible");
 
-        drawContactAnimImage(); */
+        drawContactAnimImage();
       };
     }
 
