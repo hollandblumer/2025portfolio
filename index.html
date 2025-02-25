@@ -24,6 +24,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
+    <div id="edge-banner" style="display: none">
+      <p>For the best performance, please use Chrome or Safari.</p>
+    </div>
+
     <div class="wrapper">
       <div class="square">
         <div class="inner">
@@ -2622,5 +2626,10 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./script.js"></script>
     <script src="./contact.js"></script>
+    <script>
+      if (navigator.userAgent.includes("Edg/")) {
+        document.getElementById("edge-banner").style.display = "block";
+      }
+    </script>
   </body>
 </html>

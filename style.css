@@ -1138,3 +1138,16 @@ text.read-more {
     transform: scaleX(1.1) translateX(5px);
   }
 }
+
+#edge-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #c3a887;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  z-index: 1000;
+}
