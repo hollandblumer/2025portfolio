@@ -2011,7 +2011,7 @@ document.addEventListener("DOMContentLoaded", () => {
    * -------------------------- */
   setTimeout(() => {
     document.body.classList.add("loaded");
-    drawHeroAnimImage();
+    drawHeroAnimImageOpened();
   }, 3000);
 
   /* -------------------
