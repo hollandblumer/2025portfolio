@@ -725,7 +725,7 @@ text.read-more {
   font-family: "Work Sans", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  fill: #c28522;
+  fill: #f4f4f4;
   animation: rotate 25s linear infinite;
   transform-origin: 250px 250px;
   font-size: 56px;
