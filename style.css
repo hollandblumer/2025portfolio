@@ -33,6 +33,7 @@ body {
   background: #cbaf83;
   background: #c4a887;
   background: #c4a887;
+  background: #c3a786;
   box-shadow: inset 0px 0px 300px 25px rgba(0, 0, 0, 0.2);
 }
 
@@ -471,6 +472,7 @@ body.loaded .contact-page.visible {
   pointer-events: auto;
   color: transparent;
   z-index: 11;
+  display: none;
 }
 
 .initial-load .contact-page .form-group .label {
@@ -1150,4 +1152,42 @@ text.read-more {
   padding: 10px;
   font-size: 16px;
   z-index: 1000;
+}
+
+.codepen-badge {
+  position: fixed;
+  z-index: 100090;
+  transform: translateY(-50%);
+  top: 30%;
+  right: 0;
+  text-decoration: none;
+}
+
+.codepen-logo-svg {
+  width: 20px;
+  height: 20px;
+}
+.codepen-layout {
+  background: #c3a786;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 10px;
+  writing-mode: vertical-rl;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 5px 0 0 5px;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+}
+
+.codepen-text {
+  transform: rotate(180deg);
+  font-size: 12px;
+}
+.codepen-logo-svg {
+  display: block !important; /* or inline-block */
 }
