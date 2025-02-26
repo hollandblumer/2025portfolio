@@ -1217,3 +1217,7 @@ text.read-more {
     height: 16px;
   }
 }
+
+.linkedin {
+  z-index: 100000000;
+}
