@@ -1191,3 +1191,30 @@ text.read-more {
 .codepen-logo-svg {
   display: block !important; /* or inline-block */
 }
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .codepen-badge {
+    top: auto;
+    bottom: 10px;
+    right: 10px;
+    transform: none;
+  }
+
+  .codepen-layout {
+    flex-direction: column;
+    padding: 8px;
+    writing-mode: horizontal-tb;
+    border-radius: 5px;
+  }
+
+  .codepen-text {
+    transform: none;
+    font-size: 10px;
+  }
+
+  .codepen-logo-svg {
+    width: 16px;
+    height: 16px;
+  }
+}
