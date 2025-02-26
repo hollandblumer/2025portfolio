@@ -1155,7 +1155,7 @@ text.read-more {
 }
 
 .codepen-badge {
-  position: fixed;
+  position: absolute;
   z-index: 100090;
   transform: translateY(-50%);
   top: 30%;
@@ -1195,21 +1195,20 @@ text.read-more {
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
   .codepen-badge {
-    top: auto;
+    position: absolute;
+    z-index: 100090;
+    top: 20%;
+    right: 0;
+    text-decoration: none;
+  }
+  .codepen-badge {
     bottom: 10px;
     right: 10px;
     transform: none;
   }
 
-  .codepen-layout {
-    flex-direction: column;
-    padding: 8px;
-    writing-mode: horizontal-tb;
-    border-radius: 5px;
-  }
-
   .codepen-text {
-    transform: none;
+    transform: rotate(180deg);
     font-size: 10px;
   }
 
