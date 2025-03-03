@@ -1221,3 +1221,25 @@ text.read-more {
 .linkedin {
   z-index: 100000000;
 }
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: white; /* Change arrow color */
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Background color */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.swiper-button-prev {
+  left: 10px; /* Adjust left positioning */
+}
+
+.swiper-button-next {
+  right: 10px; /* Adjust right positioning */
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 20px; /* Adjust arrow size */
+}
