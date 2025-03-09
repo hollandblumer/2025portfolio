@@ -34,6 +34,8 @@ body {
   background: #c4a887;
   background: #c4a887;
   background: #c3a786;
+  background: #0478be;
+  background: #e0b050;
   box-shadow: inset 0px 0px 300px 25px rgba(0, 0, 0, 0.2);
 }
 
@@ -116,8 +118,8 @@ iframe {
 
 .square {
   position: absolute;
-  height: min(60vh, 60vw);
-  width: min(60vh, 60vw);
+  height: min(40vh, 40vw);
+  width: min(40vh, 40vw);
   background-color: white;
   transform-style: preserve-3d;
   animation-name: adjust-clip, upward;
@@ -329,18 +331,6 @@ body.loaded .graphics-slider.visible {
 
 @keyframes adjust-clip {
   0% {
-    -webkit-clip-path: polygon(
-      50% 50%,
-      50% 50%,
-      50% 50%,
-      50% 50%,
-      50% 50%,
-      50% 50%,
-      50% 50%,
-      50% 50%,
-      50% 50%,
-      50% 50%
-    );
     clip-path: polygon(
       50% 50%,
       50% 50%,
@@ -354,20 +344,7 @@ body.loaded .graphics-slider.visible {
       50% 50%
     );
   }
-
   25% {
-    -webkit-clip-path: polygon(
-      50% calc(0% - 1px),
-      50% calc(0% - 1px),
-      calc(100% + 1px) 40%,
-      calc(100% + 1px) 40%,
-      83% calc(100% + 1px),
-      83% calc(100% + 1px),
-      17% calc(100% + 1px),
-      17% calc(100% + 1px),
-      calc(0% - 1px) 40%,
-      calc(0% - 1px) 40%
-    );
     clip-path: polygon(
       50% calc(0% - 1px),
       50% calc(0% - 1px),
@@ -381,20 +358,7 @@ body.loaded .graphics-slider.visible {
       calc(0% - 1px) 40%
     );
   }
-
   75% {
-    -webkit-clip-path: polygon(
-      17% calc(0% - 1px),
-      83% calc(0% - 1px),
-      83% calc(0% - 1px),
-      calc(100% + 1px) 60%,
-      calc(100% + 1px) 60%,
-      50% calc(100% + 1px),
-      50% calc(100% + 1px),
-      calc(0% - 1px) 60%,
-      calc(0% - 1px) 60%,
-      17% 0%
-    );
     clip-path: polygon(
       17% calc(0% - 1px),
       83% calc(0% - 1px),
@@ -408,20 +372,7 @@ body.loaded .graphics-slider.visible {
       17% 0%
     );
   }
-
   100% {
-    -webkit-clip-path: polygon(
-      50% 50%,
-      50% 50%,
-      50% 50%,
-      50% 50%,
-      50% 50%,
-      50% 50%,
-      50% 50%,
-      50% 50%,
-      50% 50%,
-      50% 50%
-    );
     clip-path: polygon(
       50% 50%,
       50% 50%,
