@@ -1764,10 +1764,10 @@ function drawFooterAnimImage() {
   var particleArr = [];
   var particleAttributes = { spacing: 10, radius: 5 };
   var colorPalette = [
-    "rgb(237, 118, 47)",
-    "rgb(255, 232, 2)",
-    "rgb(255, 126, 255)",
-    "rgb(94,118,1)",
+    "rgba(255, 255, 255, 1)",
+    "rgba(240, 240, 240, 1)",
+    "rgba(220, 220, 220, 1)",
+    "rgba(200, 200, 200, 1)",
   ];
 
   /* --------------------------
