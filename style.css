@@ -33,10 +33,16 @@ body {
   background: #cbaf83;
   background: #c4a887;
   background: #c4a887;
-  background: #c3a786;
+
   background: #0478be;
+
+  background: rgb(68, 68, 68);
+  background: #f3ecde;
   background: #e0b050;
-  box-shadow: inset 0px 0px 300px 25px rgba(0, 0, 0, 0.2);
+
+  background: rgb(16, 16, 16);
+  background: #c3a786;
+  /* box-shadow: inset 0px 0px 300px 25px rgba(0, 0, 0, 0.2); */
 }
 
 body > *:not(.wrapper) {
